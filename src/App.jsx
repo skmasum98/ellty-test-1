@@ -10,7 +10,7 @@ export default function App() {
     page5: false,
     page6: false,
   });
-
+// Handle the "All pages" checkbox change
   const handleAllChange = () => {
     const newValue = !pages.all;
     const updated = Object.fromEntries(
@@ -18,7 +18,7 @@ export default function App() {
     );
     setPages(updated);
   };
-
+// Handle individual page checkbox change
   const handlePageChange = (page) => {
     const updated = { ...pages, [page]: !pages[page] };
     const allChecked = Object.keys(updated)
@@ -27,7 +27,7 @@ export default function App() {
     updated.all = allChecked;
     setPages(updated);
   };
-
+// Handle the "Done" button click
   const handleDone = () => {
   const selected = Object.keys(pages)
     .filter((key) => key !== "all" && pages[key])
